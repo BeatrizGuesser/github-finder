@@ -5,6 +5,7 @@ import styles from "./Repos.module.css"
 import BackBtn from '../components/BackBtn'
 import { RepoProps } from '../types/repo'
 import Loader from '../components/Loader'
+import Repo from '../components/Repo'
 
 const Repos = () => {
 
@@ -44,7 +45,7 @@ const Repos = () => {
             {repos && repos.length > 0 && (
                 <div>
                     {repos.map((repo: RepoProps) => (
-                        <p>{repo.name}</p>
+                        <Repo key={repo.name} {...repo} />
                     ))}
                 </div>
             )}
