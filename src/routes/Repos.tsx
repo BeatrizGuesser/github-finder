@@ -38,12 +38,12 @@ const Repos = () => {
     if (!repos && isLoading) return <Loader />;
 
     return (
-        <div>
+        <div className={styles.repos}>
             <BackBtn />
             <h2>Explore user repositories: {username}</h2>
             {repos && repos.length === 0 && <p>There are no repositories.</p>}
             {repos && repos.length > 0 && (
-                <div>
+                <div className={styles.repos_container}>
                     {repos.map((repo: RepoProps) => (
                         <Repo key={repo.name} {...repo} />
                     ))}
